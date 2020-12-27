@@ -1,0 +1,52 @@
+@media only screen and (max-width: 1920px) {
+  /* For mobile phones: */
+}
+.Body {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  padding-top: 6%;
+  /* @media only screen and (max-width: 1920px); */
+}
+.Input {
+  top: 312px;
+  left: 160px;
+  width: 439px;
+  height: 77px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  opacity: 1;
+  /* position: absolute; */
+}
+.Label {
+  top: 326px;
+  left: 555px;
+  width: 30px;
+  height: 21px;
+  text-align: right;
+  font: normal normal medium 14px/21px Dana;
+  letter-spacing: -0.78px;
+  color: #c5c5c5;
+  opacity: 1;
+  /* position: relative; */
+}
+.Button {
+  top: 516px;
+  left: 160px;
+  width: 439px;
+  height: 56px;
+  background: #1388e6 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+  opacity: 1;
+}
+#image {
+  top: 0px;
+  left: 637px;
+  width: 1283px;
+  height: 1081px;
+  opacity: 1;
+}
