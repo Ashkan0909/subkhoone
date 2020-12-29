@@ -20,15 +20,15 @@ export default function PropertiesPage({ results }) {
               <Link href={`/properties/${item.id}/primary`} key={item.id}>
                 <div className={styles.container} key={item.id}>
                   <h3 className={styles.title}>{item.name} </h3>
-                  <div className={styles.imgContainer}>
-                    <span className={styles.marketType}>بازار اولیه</span>
-                    <img
-                      className={styles.img}
-                      src={`https://api.subkhoone.com//${
-                        item.images.main && item.images.main.original
-                      }`}
-                    />
-                  </div>
+                  <span className={styles.marketType}>بازار اولیه</span>
+                  {/* <div className={styles.imgContainer}> */}
+                  <img
+                    className={styles.img}
+                    src={`https://api.subkhoone.com//${
+                      item.images.main && item.images.main.original
+                    }`}
+                  />
+                  {/* </div> */}
                   <div className={styles.footTitle}>
                     <h5>نوع ملک</h5>
                   </div>
@@ -40,16 +40,16 @@ export default function PropertiesPage({ results }) {
             item.present_secondary_market_id ? (
               <Link href={`/properties/${item.id}/secondary`} key={item.id}>
                 <div className={styles.container} key={item.id}>
-                  <h3 className={styles.title}>{item.name}</h3>
-                  <div className={styles.imgContainer}>
-                    <span className={styles.marketType}>بازار ثانویه</span>
-                    <img
-                      className={styles.img}
-                      src={`https://api.subkhoone.com//${
-                        item.images.main && item.images.main.original
-                      }`}
-                    />
-                  </div>
+                  <h3 className={styles.title}>{item.name} </h3>
+                  <span className={styles.marketType}>بازار ثانویه</span>
+                  {/* <div className={styles.imgContainer}> */}
+                  <img
+                    className={styles.img}
+                    src={`https://api.subkhoone.com//${
+                      item.images.main && item.images.main.original
+                    }`}
+                  />
+                  {/* </div> */}
                   <div className={styles.footTitle}>
                     <h5>نوع ملک</h5>
                   </div>
@@ -60,17 +60,17 @@ export default function PropertiesPage({ results }) {
           {results.data.map((item) =>
             item.present_exit_market_id ? (
               <Link href={`/properties/${item.id}/exit`} key={item.id}>
-                <div className={styles.container}>
-                  <h3 className={styles.title}>{item.name}</h3>
-                  <div className={styles.imgContainer}>
-                    <span className={styles.marketType}>بازار خروج</span>
-                    <img
-                      className={styles.img}
-                      src={`https://api.subkhoone.com//${
-                        item.images.main && item.images.main.original
-                      }`}
-                    />
-                  </div>
+                <div className={styles.container} key={item.id}>
+                  <h3 className={styles.title}>{item.name} </h3>
+                  <span className={styles.marketType}>بازار خروج</span>
+                  {/* <div className={styles.imgContainer}> */}
+                  <img
+                    className={styles.img}
+                    src={`https://api.subkhoone.com//${
+                      item.images.main && item.images.main.original
+                    }`}
+                  />
+                  {/* </div> */}
                   <div className={styles.footTitle}>
                     <h5>نوع ملک</h5>
                   </div>

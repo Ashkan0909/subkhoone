@@ -12,13 +12,14 @@
   font-size: 1.87rem;
 }
 
-.navButton :active {
-  text-decoration: underline;
-}
 .orders {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-
+  grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+  grid-template-rows: 20%;
+  justify-content: space-between;
+  width: 90%;
+  left: 4%;
+  position: relative;
   /* grid-template-rows: auto; */
 }
 @media screen and (max-width: 600px) {
@@ -27,34 +28,76 @@
   }
 }
 .container {
-  margin: 1rem;
   border: solid grey 1px;
-  width: 75%;
-  height: 15rem;
   border-radius: 9px;
+  align-content: center;
+  margin: 5%;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  transition: all 0.5s ease;
+  overflow: hidden;
 }
 .bodyContainer {
-  padding-top: 6%;
+  padding-top: 10%;
 }
 .title {
-  left: 0;
-  text-align: right;
   font-size: 0.9rem;
-  position: relative;
+  font-weight: 800;
+  color: #000;
+  letter-spacing: -0.97px;
+  position: absolute;
+  right: 2.12rem;
+  top: 0.12rem;
+  z-index: 99;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin-bottom: 0;
+}
+
+.marketType {
+  top: 3rem;
+  position: absolute;
+  z-index: 99999;
+  background-color: #1abb9c;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  left: 0.8rem;
+  top: 1rem;
 }
 .footTitle {
-  position: relative;
-  left: 0rem;
-  top: 8.95rem;
-  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #000;
+  letter-spacing: -0.97px;
+  position: absolute;
+  right: 2.12rem;
+  bottom: 0.12rem;
+  z-index: 99;
 }
 .img {
+  top: 20%;
   width: 100%;
-  height: 100%;
+  height: 60%;
+  position: relative;
+  transition: 0.3s;
+  border-radius: 9px;
 }
-.img:hover {
-  transition: 0.5s;
-  transform: scaleY(1.5);
+.container:hover .img {
+  top: 0;
+  height: 80%;
+  transition: 0.3s;
   opacity: 1;
-  height: 500%;
+}
+.container:hover {
+  cursor: pointer;
+}
+
+.container:hover .title {
+  color: blue;
+}
+.container:hover .marketType {
+  opacity: 0;
 }
