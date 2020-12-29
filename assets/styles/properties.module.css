@@ -4,6 +4,12 @@
   direction: rtl !important;
   text-align: right;
   opacity: 0.5;
+  padding-right: 5%;
+  font-size: 0.87rem;
+}
+.mainTitle {
+  opacity: 1;
+  font-size: 1.87rem;
 }
 
 .navButton :active {

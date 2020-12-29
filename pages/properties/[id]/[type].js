@@ -117,15 +117,15 @@ export default function Type(props) {
             <div className={styles.info}>
               <div className={styles.subInfo}>
                 <span>{`${props.results.data.present_primary_market.low_price}`}</span>
-                <div>
+                <div className={styles.stateInfo}>
                   <span>شروع دوره سرمایه گذاری</span>
                   <i className="r-calendar"></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`صاب ${props.results.data.all_number_of_shares}`}</span>
-                <div>
+                <span>{`${props.results.data.all_number_of_shares}`}</span>
+                <div className={styles.stateInfo}>
                   <span>نوع ملک</span>
                   <i className="r-clock"></i>
                 </div>
@@ -133,7 +133,7 @@ export default function Type(props) {
               <br />
               <div className={styles.subInfo}>
                 <span>{`${props.results.data.smallest_shares}`}</span>
-                <div>
+                <div className={styles.stateInfo}>
                   <span>تاریخ پایان سرمایه گذاری</span>
                   <i className="r-calendar"></i>
                 </div>
@@ -141,7 +141,7 @@ export default function Type(props) {
               <br />
               <div className={styles.subInfo}>
                 <span>{`${props.results.data.largest_shares}`}</span>
-                <div>
+                <div className={styles.stateInfo}>
                   <span>مدت باقی مانده</span>
                   <i className="r-clockloop"></i>
                 </div>
@@ -149,7 +149,7 @@ export default function Type(props) {
               <br />
               <div className={styles.subInfo}>
                 <span>{`${props.results.data.number_of_contributors}`}</span>
-                <div>
+                <div className={styles.stateInfo}>
                   <span>تعداد کل صاب</span>
                   <i className="r-statistical"></i>
                 </div>
@@ -157,7 +157,7 @@ export default function Type(props) {
               <br />
               <div className={styles.subInfo}>
                 <span>{`${props.results.data.present_primary_market.low_price}`}</span>
-                <div>
+                <div className={styles.stateInfo}>
                   <span>تعداد سرمایه گذاران تا به الان</span>
                   <i className="r-calendar"></i>
                 </div>
@@ -165,7 +165,7 @@ export default function Type(props) {
               <br />
               <div className={styles.subInfo}>
                 <span>{`${props.results.data.present_primary_market.low_price}`}</span>
-                <div>
+                <div className={styles.stateInfo}>
                   <span>کمترین قیمت قابل پیشنهاد برای خرید</span>
                   <i className="r-men"></i>
                 </div>
@@ -174,33 +174,33 @@ export default function Type(props) {
               <div className={styles.subInfo}>
                 <span>{`${props.results.data.present_primary_market.low_price}`}</span>
 
-                <div>
+                <div className={styles.stateInfo}>
                   <span>بیشترین قیمت قابل پیشنهاد برای خرید</span>
                   <i className="r-men"></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                {/* <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span> */}
-                <div>
-                  <i className="r-money-dollar-badge"></i>
+                <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
+                <div className={styles.stateInfo}>
                   <span>کمترین قیمت قابل پیشنهاد برای فروش</span>
+                  <i className="r-money-dollar-badge"></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                {/* <span>{`${moment(props.results)}`}</span> */}
-                <div>
-                  <i className="r-men"></i>
+                <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
+                <div className={styles.stateInfo}>
                   <span>بیشترین قیمت قابل پیشنهاد برای فروش</span>
+                  <i className="r-men"></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                {/* <span>{`${moment(props.results)}`}</span> */}
-                <div>
-                  <i className="r-men"></i>
+                <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
+                <div className={styles.stateInfo}>
                   <span>سهم من از ملک</span>
+                  <i className="r-men"></i>
                 </div>
               </div>
               <br />
