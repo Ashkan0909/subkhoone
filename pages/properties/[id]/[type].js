@@ -24,76 +24,74 @@ export default function Type(props) {
       <>
         <Layout>
           <div className={styles.container}>
-            <img
-              src={`https://api.subkhoone.com//${props.results.data.images.main.original}`}
-            />
-            <div>
-              <div>
-                <div>
-                  <i className="r-clock"></i>
+            <div className={styles.info}>
+              <div className={styles.subInfo}>
+                {/* <span>صاب</span> */}
+                <span>{`${props.results.data.all_number_of_shares}`}</span>
+                <div className={styles.stateInfo}>
                   <span>کل صاب</span>
+                  <i className={`${styles.icon} r-clock`}></i>
                 </div>
-                <span>{`صاب ${props.results.data.all_number_of_shares}`}</span>
               </div>
               <br />
-              <div>
-                <div>
-                  <i className="r-calendar"></i>
-                  <span>کمترین صاب خریداری شده</span>
-                </div>
+              <div className={styles.subInfo}>
                 <span>{`${props.results.data.smallest_shares}`}</span>
+                <div className={styles.stateInfo}>
+                  <span>کمترین صاب خریداری شده</span>
+                  <i className={`${styles.icon} r-calendar`}></i>
+                </div>
               </div>
               <br />
-              <div>
-                <div>
-                  <i className="r-clockloop"></i>
-                  <span>بیشترین صاب خریداری شده</span>
-                </div>
+              <div className={styles.subInfo}>
                 <span>{`${props.results.data.largest_shares}`}</span>
+                <div className={styles.stateInfo}>
+                  <span>بیشترین صاب خریداری شده</span>
+                  <i className={`${styles.icon} r-clockloop`}></i>
+                </div>
               </div>
               <br />
-              <div>
-                <div>
-                  <i className="r-statistical"></i>
-                  <span>تعداد کشارکت کننده ها</span>
-                </div>
+              <div className={styles.subInfo}>
                 <span>{`${props.results.data.number_of_contributors}`}</span>
+                <div className={styles.stateInfo}>
+                  <span>تعداد کشارکت کننده ها</span>
+                  <i className={`${styles.icon} r-statistical`}></i>
+                </div>
               </div>
               <br />
-              <div>
-                <div>
-                  <i className="r-calendar"></i>
-                  <span>کمترین قیمت قابل پیشنهاد</span>
-                </div>
+              <div className={styles.subInfo}>
                 <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <div className={styles.stateInfo}>
+                  <span>کمترین قیمت قابل پیشنهاد</span>
+                  <i className={`${styles.icon} r-calendar`}></i>
+                </div>
               </div>
               <br />
-              <div>
-                <div>
-                  <i className="r-men"></i>
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <div className={styles.stateInfo}>
                   <span>تاریخ شروع فروش</span>
-                </div>
-                {/* <span>{`${moment(props.results)}`}</span> */}
-              </div>
-              <br />
-              <div>
-                <div>
                   <i className="r-men"></i>
-                  <span>زمان اتمام فروش</span>
                 </div>
-                {/* <span></span> */}
               </div>
               <br />
-              <div>
-                <div>
-                  <i className="r-money-dollar-badge"></i>
-                  <span>سهم من از ملک</span>
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <div className={styles.stateInfo}>
+                  <span>زمان اتمام فروش</span>
+                  <i className={`${styles.icon} r-men`}></i>
                 </div>
+              </div>
+              <br />
+              <div className={styles.subInfo}>
                 <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
+                <div className={styles.stateInfo}>
+                  <span>سهم من از ملک</span>
+                  <i className={`${styles.icon} r-money-dollar-badge`}></i>
+                </div>
               </div>
               <br />
               <button onClick={setModalIsOpenToTrue}>ثبت پیشنهاد خرید</button>
-              <Modal isOpen={modalIsOpen}>
+              <Modal isOpen={modalIsOpen} className={styles.modalBody}>
                 <button onClick={setModalIsOpenToFalse}>x</button>
                 <PrimaryMarket
                   assetId={props.results.data.id}
@@ -101,6 +99,11 @@ export default function Type(props) {
                 />
               </Modal>
             </div>
+
+            <img
+              className={styles.img}
+              src={`https://api.subkhoone.com//${props.results.data.images.main.original}`}
+            />
           </div>
         </Layout>
       </>
@@ -111,100 +114,98 @@ export default function Type(props) {
       <>
         <Layout>
           <div className={styles.container}>
-            <img
-              src={`https://api.subkhoone.com//${props.results.data.images.main.original}`}
-            />
-            <div>
-              <div>
+            <div className={styles.info}>
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
                 <div>
-                  <i className="r-calendar"></i>
                   <span>شروع دوره سرمایه گذاری</span>
+                  <i className="r-calendar"></i>
                 </div>
-                {/* <span>{`${props.results.data.smallest_shares}`}</span> */}
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                <span>{`صاب ${props.results.data.all_number_of_shares}`}</span>
                 <div>
-                  <i className="r-clock"></i>
                   <span>نوع ملک</span>
+                  <i className="r-clock"></i>
                 </div>
-                {/* <span>{`صاب ${props.results.data.all_number_of_shares}`}</span> */}
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.smallest_shares}`}</span>
                 <div>
-                  <i className="r-calendar"></i>
                   <span>تاریخ پایان سرمایه گذاری</span>
-                </div>
-                {/* <span>{`${props.results.data.smallest_shares}`}</span> */}
-              </div>
-              <br />
-              <div>
-                <div>
-                  <i className="r-clockloop"></i>
-                  <span>مدت باقی مانده</span>
-                </div>
-                {/* <span>{`${props.results.data.largest_shares}`}</span> */}
-              </div>
-              <br />
-              <div>
-                <div>
-                  <i className="r-statistical"></i>
-                  <span>تعداد کل صاب</span>
-                </div>
-                {/* <span>{`${props.results.data.number_of_contributors}`}</span> */}
-              </div>
-              <br />
-              <div>
-                <div>
                   <i className="r-calendar"></i>
+                </div>
+              </div>
+              <br />
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.largest_shares}`}</span>
+                <div>
+                  <span>مدت باقی مانده</span>
+                  <i className="r-clockloop"></i>
+                </div>
+              </div>
+              <br />
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.number_of_contributors}`}</span>
+                <div>
+                  <span>تعداد کل صاب</span>
+                  <i className="r-statistical"></i>
+                </div>
+              </div>
+              <br />
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <div>
                   <span>تعداد سرمایه گذاران تا به الان</span>
+                  <i className="r-calendar"></i>
                 </div>
-                {/* <span>{`${props.results.data.present_primary_market.low_price}`}</span> */}
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
                 <div>
-                  <i className="r-men"></i>
                   <span>کمترین قیمت قابل پیشنهاد برای خرید</span>
-                </div>
-                {/* <span>{`${moment(props.results)}`}</span> */}
-              </div>
-              <br />
-              <div>
-                <div>
                   <i className="r-men"></i>
-                  <span>بیشترین قیمت قابل پیشنهاد برای خرید</span>
                 </div>
-                {/* <span></span> */}
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+
+                <div>
+                  <span>بیشترین قیمت قابل پیشنهاد برای خرید</span>
+                  <i className="r-men"></i>
+                </div>
+              </div>
+              <br />
+              <div className={styles.subInfo}>
+                {/* <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span> */}
                 <div>
                   <i className="r-money-dollar-badge"></i>
                   <span>کمترین قیمت قابل پیشنهاد برای فروش</span>
                 </div>
-                {/* <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span> */}
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                {/* <span>{`${moment(props.results)}`}</span> */}
                 <div>
                   <i className="r-men"></i>
                   <span>بیشترین قیمت قابل پیشنهاد برای فروش</span>
                 </div>
-                {/* <span>{`${moment(props.results)}`}</span> */}
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                {/* <span>{`${moment(props.results)}`}</span> */}
                 <div>
                   <i className="r-men"></i>
                   <span>سهم من از ملک</span>
                 </div>
-                {/* <span>{`${moment(props.results)}`}</span> */}
               </div>
               <br />
               <button onClick={setModalIsOpenToTrue}>ثبت پیشنهاد خرید</button>
-              <Modal isOpen={modalIsOpen}>
+              <Modal isOpen={modalIsOpen} className={styles.modalBody}>
                 <button onClick={setModalIsOpenToFalse}>x</button>
                 <SecondaryMarket
                   assetId={props.results.data.id}
@@ -213,6 +214,9 @@ export default function Type(props) {
               </Modal>
               <button>ثبت پیشنهاد فروش</button>
             </div>
+            <img
+              src={`https://api.subkhoone.com//${props.results.data.images.main.original}`}
+            />
           </div>
         </Layout>
       </>
@@ -223,68 +227,65 @@ export default function Type(props) {
       <>
         <Layout>
           <div className={styles.container}>
-            <img
-              src={`https://api.subkhoone.com//${props.results.data.images.main.original}`}
-            />
-            <div>
-              <div>
+            <div className={styles.info}>
+              <div className={styles.subInfo}>
+                <span>{`صاب ${props.results.data.all_number_of_shares}`}</span>
                 <div>
                   <i className="r-clock"></i>
                   <span>کل صاب</span>
                 </div>
-                <span>{`صاب ${props.results.data.all_number_of_shares}`}</span>
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.smallest_shares}`}</span>
                 <div>
                   <i className="r-calendar"></i>
                   <span>کمترین صاب خریداری شده</span>
                 </div>
-                <span>{`${props.results.data.smallest_shares}`}</span>
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.largest_shares}`}</span>
                 <div>
                   <i className="r-clockloop"></i>
                   <span>بیشترین صاب خریداری شده</span>
                 </div>
-                <span>{`${props.results.data.largest_shares}`}</span>
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.number_of_contributors}`}</span>
                 <div>
                   <i className="r-statistical"></i>
                   <span>تعداد کشارکت کننده ها</span>
                 </div>
-                <span>{`${props.results.data.number_of_contributors}`}</span>
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                {/* <span>{`${moment(props.results)}`}</span> */}
                 <div>
                   <i className="r-men"></i>
                   <span>تاریخ شروع فروش</span>
                 </div>
-                {/* <span>{`${moment(props.results)}`}</span> */}
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                {/* <span></span> */}
                 <div>
                   <i className="r-men"></i>
                   <span>زمان اتمام فروش</span>
                 </div>
-                {/* <span></span> */}
               </div>
               <br />
-              <div>
+              <div className={styles.subInfo}>
+                <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
                 <div>
                   <i className="r-money-dollar-badge"></i>
                   <span>سهم من از ملک</span>
                 </div>
-                <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
               </div>
               <br />
               <button onClick={setModalIsOpenToTrue}>ثبت پیشنهاد خرید</button>
-              <Modal isOpen={modalIsOpen}>
+              <Modal isOpen={modalIsOpen} className={styles.modalBody}>
                 <button onClick={setModalIsOpenToFalse}>x</button>
                 <ExitMarket
                   assetId={props.results.data.id}
@@ -292,6 +293,10 @@ export default function Type(props) {
                 />
               </Modal>
             </div>
+
+            <img
+              src={`https://api.subkhoone.com//${props.results.data.images.main.original}`}
+            />
           </div>
         </Layout>
       </>

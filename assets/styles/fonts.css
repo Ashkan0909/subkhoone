@@ -1,32 +1,32 @@
 @font-face {
-  font-family: dana;
-  src: url("../styles/fonts/ttf/dana-fanum-regular.ttf");
-  src: url("../styles/fonts/woff/dana-fanum-regular.woff");
-  src: url("../styles/fonts/woff2/dana-fanum-regular.woff2");
-  src: url("../styles/fonts/eot/dana-fanum-regular.eot");
+  font-family: "dana";
+  src: url("./fonts/ttf/dana-fanum-regular.ttf"),
+    url("./fonts/woff/dana-fanum-regular.woff"),
+    url("./fonts/woff2/dana-fanum-regular.woff2"),
+    url("./fonts/eot/dana-fanum-regular.eot");
   font-weight: normal;
 }
 @font-face {
-  font-family: dana;
-  src: url("../styles/fonts/ttf/dana-fanum-light.ttf");
-  src: url("../styles/fonts/woff/dana-fanum-light.woff");
-  src: url("../styles/fonts/woff2/dana-fanum-light.woff2");
-  src: url("../styles/fonts/eot/dana-fanum-light.eot");
+  font-family: "dana";
+  src: url("./fonts/ttf/dana-fanum-light.ttf"),
+    url("./fonts/woff/dana-fanum-light.woff"),
+    url("./fonts/woff2/dana-fanum-light.woff2"),
+    url("./fonts/eot/dana-fanum-light.eot");
   font-weight: 400;
 }
 @font-face {
-  font-family: dana;
-  src: url("../styles/fonts/ttf/dana-fanum-black.ttf");
-  src: url("../styles/fonts/woff/dana-fanum-black.woff");
-  src: url("../styles/fonts/woff2/dana-fanum-black.woff2");
-  src: url("../styles/fonts/eot/dana-fanum-black.eot");
+  font-family: "dana";
+  src: url("./fonts/ttf/dana-fanum-black.ttf"),
+    url("./fonts/woff/dana-fanum-black.woff"),
+    url("./fonts/woff2/dana-fanum-black.woff2"),
+    url("./fonts/eot/dana-fanum-black.eot");
   font-weight: 600;
 }
 @font-face {
-  font-family: dana;
-  src: url("../styles/fonts/ttf/dana-fanum-bold.ttf");
-  src: url("../styles/fonts/woff/dana-fanum-bold.woff");
-  src: url("../styles/fonts/woff2/dana-fanum-bold.woff2");
-  src: url("../styles/fonts/eot/dana-fanum-bold.eot");
+  font-family: "dana";
+  src: url("./fonts/ttf/dana-fanum-bold.ttf"),
+    url("./fonts/woff/dana-fanum-bold.woff"),
+    url("./fonts/woff2/dana-fanum-bold.woff2"),
+    url("./fonts/eot/dana-fanum-bold.eot");
   font-weight: bold;
 }

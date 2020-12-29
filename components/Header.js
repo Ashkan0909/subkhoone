@@ -47,32 +47,22 @@ export default function Header() {
                 onClick={() => router.push("/Login")}
               ></div>
             )}
-            <span className="r-search1"></span>
+            <span className={`${styles.search} r-search1`}></span>
           </div>
         </div>
         <ul className={styles.ulHeader}>
-          {/* <li className={styles.liHeader}> */}
           <button className={styles.Button}>تماس باما</button>
-          {/* </li> */}
-          {/* <li className={styles.liHeader}> */}
           <button className={styles.Button}>درباره ما</button>
-          {/* </li> */}
-          {/* <li className={styles.liHeader}> */}
           <button className={styles.Button}>چراما</button>
-          {/* </li> */}
-          {/* <li className={styles.liHeader}> */}
           <button
             className={styles.Button}
             onClick={() => router.push("/properties")}
           >
             املاک
           </button>
-          {/* </li> */}
-          {/* <li className={styles.liHeader}> */}
           <button className={styles.Button} onClick={() => router.push("/")}>
             خانه
           </button>
-          {/* </li> */}
         </ul>
         <div className={styles.logo}>
           <img src="https://subkhoone.com/logo.svg" />

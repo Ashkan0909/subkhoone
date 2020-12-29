@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Layout from "../Layout";
 
 export default function PrimaryMarket({ assetId, marketId }) {
   const [value, setValue] = useState();
@@ -23,7 +22,6 @@ export default function PrimaryMarket({ assetId, marketId }) {
           <i className="r-hands-and-gestures"></i>
           <span>ثبت پیشنهاد</span>
         </div>
-        <span>x</span>
       </div>
       <div className="styles.modalBody">
         <div>مشخص کردن ارقام</div>
