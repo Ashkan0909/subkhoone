@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Layout from "../Layout";
+import styles from "../../assets/styles/modal.module.css";
 export default function ExitMarket({ assetId, marketId }) {
   const req = () => {
     const url = `https://api.subkhoone.com/api/assets/${assetId}/exit_markets/${marketId}/exit_market_offers`;
-    // const url = `https://api.subkhoone.com/api/assets/615890603958042625/exit_markets/616442209247297537/exit_market_offers`;
     axios
       .post(url, {
         exit_market_offer: {
@@ -13,23 +12,30 @@ export default function ExitMarket({ assetId, marketId }) {
       })
       .then((res) => console.log(res));
   };
-  const [price, setValue] = useState(0);
+  const [price, setValue] = useState({ price: 0 });
   return (
     <>
-      <div className="styles.modalHeader">
+      <div className={styles.modalHeader}>
         <div>
-          <i className="r-hands-and-gestures"></i>
           <span>ثبت پیشنهاد</span>
+          <i className={`${styles.icon} r-hands-and-gestures`}></i>
         </div>
       </div>
-      <div className="styles.modalBody">
-        <div>مشخص کردن ارقام</div>
+      <div>
+        <div className={styles.middleBody}>مشخص کردن ارقام</div>
         {console.log(price)}
-        <span>ثبت پیشنهاد خرید این ملک به قیمت هر صاب</span>
-        <input onChange={(e) => setValue(Number(e.target.value))} />
-        <span>میلیون تومان</span>
-
-        <button onClick={req}>ثبت</button>
+        <div className={styles.values}>
+          <span>ثبت پیشنهاد خرید این ملک به قیمت هر صاب</span>
+          <input
+            className={styles.input}
+            value={price.price}
+            onChange={(e) => setValue(Number(e.target.value))}
+          />
+          <span>میلیون تومان</span>
+        </div>
+        <button className={styles.button} onClick={req}>
+          ثبت
+        </button>
       </div>
     </>
   );

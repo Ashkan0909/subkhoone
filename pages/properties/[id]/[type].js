@@ -128,7 +128,12 @@ export default function Type(props) {
                 ثبت پیشنهاد خرید
               </button>
               <Modal isOpen={modalIsOpen} className={styles.modalBody}>
-                <button onClick={setModalIsOpenToFalse}>x</button>
+                <button
+                  className={`${styles.modalCloseButton} r-cancel`}
+                  onClick={setModalIsOpenToFalse}
+                >
+                  {/* <i className={`${styles.modalCloseButton} r-cancel`}></i> */}
+                </button>
                 <PrimaryMarket
                   assetId={props.results.data.id}
                   marketId={props.results.data.present_primary_market.id}
@@ -281,7 +286,10 @@ export default function Type(props) {
                 ثبت پیشنهاد خرید
               </button>
               <Modal isOpen={modalIsOpen} className={styles.modalBody}>
-                <button onClick={setModalIsOpenToFalse}>x</button>
+                <button
+                  className={`${styles.modalCloseButton} r-cancel`}
+                  onClick={setModalIsOpenToFalse}
+                ></button>
                 <SecondaryMarket
                   assetId={props.results.data.id}
                   marketId={props.results.data.present_secondary_market.id}
@@ -395,8 +403,16 @@ export default function Type(props) {
               >
                 ثبت پیشنهاد خرید
               </button>
-              <Modal isOpen={modalIsOpen} className={styles.modalBody}>
-                <button onClick={setModalIsOpenToFalse}>x</button>
+              <Modal
+                style={{ overlay: { background: "none" } }}
+                // overlayClassName={styles.mmm}
+                isOpen={modalIsOpen}
+                className={styles.modalBody}
+              >
+                <button
+                  className={`${styles.modalCloseButton} r-cancel`}
+                  onClick={setModalIsOpenToFalse}
+                ></button>
                 <ExitMarket
                   assetId={props.results.data.id}
                   marketId={props.results.data.present_exit_market.id}
@@ -405,6 +421,7 @@ export default function Type(props) {
             </div>
 
             <img
+              className={styles.img}
               src={`https://api.subkhoone.com//${props.results.data.images.main.original}`}
             />
           </div>

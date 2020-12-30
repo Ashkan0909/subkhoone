@@ -1,5 +1,64 @@
-.modalBody {
-  border: 5px;
-  width: 30%;
-  height: 40%;
+.modalHeader {
+  top: 0;
+  position: relative;
+  text-align: right;
+  padding-right: 1rem;
+  display: inline;
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: "dana";
+  float: right;
+  padding-top: 0.5rem;
+}
+.middleBody {
+  margin: 50px 0;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  font-family: "dana";
+  font-size: 1.25rem;
+  margin-bottom: 2.25rem;
+  font-weight: 800;
+  padding: 2rem 0;
+}
+.values {
+  text-align: center;
+  font-weight: 400;
+  font-family: "dana";
+  font-size: 1rem;
+  margin-bottom: 2.25rem;
+  padding-bottom: 2.25rem;
+  color: #000;
+}
+.icon {
+  position: relative;
+  top: 2px;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 1.25rem;
+  margin-left: 25px;
+}
+.input {
+  border: 10px;
+  background-color: #fff;
+  border: none;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  font-family: "dana";
+  text-align: center;
+  outline: none !important;
+}
+.button {
+  position: relative;
+  left: 39.5%;
+  border-radius: 10px;
+  padding: 1.5rem 4.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: none;
+  color: #fff;
+  font-weight: 800;
+  box-shadow: none !important;
+  background-color: #ff4848;
+  cursor: pointer;
 }
