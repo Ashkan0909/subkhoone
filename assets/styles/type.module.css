@@ -1,6 +1,10 @@
 .container {
-  padding-top: 5%;
+  padding-top: 8%;
   width: 100%;
+  display: grid;
+  grid-template-columns: 42% 57%;
+  height: 550px;
+  justify-content: space-between;
 }
 
 .modalBody {
@@ -12,30 +16,45 @@
 }
 .img {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 9px;
 }
-.container {
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: 30% 70%;
-}
+
 .info {
   border: lightblue solid 0.5px;
   display: grid;
   grid-template-rows: repeat(12.5%, 1fr);
   border-radius: 5px;
   font-family: "dana";
+  height: 100%;
 }
 .subInfo {
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 35% 65%;
 }
 .icon {
   align-self: center;
   align-content: center;
+  align-items: center;
+  position: relative;
+  top: 2.5px;
 }
 .stateInfo {
   align-content: center;
+  align-items: center;
   text-align: right;
   padding-right: 5px;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  position: relative;
+}
+.modalButton {
+  color: #fff;
+  background-color: red;
+  border-radius: 5px;
+  font-family: "dana";
+  height: 2.7rem;
+  cursor: pointer;
+}
+.values {
+  padding-left: 13px;
 }

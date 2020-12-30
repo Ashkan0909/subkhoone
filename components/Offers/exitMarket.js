@@ -21,7 +21,6 @@ export default function ExitMarket({ assetId, marketId }) {
           <i className="r-hands-and-gestures"></i>
           <span>ثبت پیشنهاد</span>
         </div>
-        <span>x</span>
       </div>
       <div className="styles.modalBody">
         <div>مشخص کردن ارقام</div>

@@ -6,6 +6,7 @@ import SecondaryMarket from "../../../components/Offers/secondaryMarket";
 import ExitMarket from "../../../components/Offers/exitMarket";
 import Layout from "../../../components/Layout";
 import styles from "../../../assets/styles/type.module.css";
+import moment from "moment-jalaali";
 export default function Type(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const setModalIsOpenToTrue = () => {
@@ -26,8 +27,9 @@ export default function Type(props) {
           <div className={styles.container}>
             <div className={styles.info}>
               <div className={styles.subInfo}>
-                {/* <span>صاب</span> */}
-                <span>{`${props.results.data.all_number_of_shares}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.all_number_of_shares}`}</span>
                 <div className={styles.stateInfo}>
                   <span>کل صاب</span>
                   <i className={`${styles.icon} r-clock`}></i>
@@ -35,7 +37,9 @@ export default function Type(props) {
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.smallest_shares}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.smallest_shares}`}</span>
                 <div className={styles.stateInfo}>
                   <span>کمترین صاب خریداری شده</span>
                   <i className={`${styles.icon} r-calendar`}></i>
@@ -43,7 +47,9 @@ export default function Type(props) {
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.largest_shares}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.largest_shares}`}</span>
                 <div className={styles.stateInfo}>
                   <span>بیشترین صاب خریداری شده</span>
                   <i className={`${styles.icon} r-clockloop`}></i>
@@ -51,7 +57,9 @@ export default function Type(props) {
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.number_of_contributors}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.number_of_contributors}`}</span>
                 <div className={styles.stateInfo}>
                   <span>تعداد کشارکت کننده ها</span>
                   <i className={`${styles.icon} r-statistical`}></i>
@@ -59,7 +67,9 @@ export default function Type(props) {
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.present_primary_market.low_price}`}</span>
                 <div className={styles.stateInfo}>
                   <span>کمترین قیمت قابل پیشنهاد</span>
                   <i className={`${styles.icon} r-calendar`}></i>
@@ -67,7 +77,11 @@ export default function Type(props) {
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <span className={styles.values}>
+                  {moment(
+                    props.results.data.present_primary_market.start_date_time
+                  ).format("jYYYY/jM/jD")}
+                </span>
                 <div className={styles.stateInfo}>
                   <span>تاریخ شروع فروش</span>
                   <i className="r-men"></i>
@@ -75,7 +89,22 @@ export default function Type(props) {
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <span className={styles.values}>{`${moment(
+                  props.results.data.present_primary_market.end_date_time
+                ).diff(
+                  moment(
+                    props.results.data.present_primary_market.start_date_time
+                  ),
+                  "days"
+                )}روز
+                ${moment(
+                  props.results.data.present_primary_market.end_date_time
+                ).diff(
+                  moment(
+                    props.results.data.present_primary_market.start_date_time
+                  ),
+                  "hours"
+                )}ساعت`}</span>
                 <div className={styles.stateInfo}>
                   <span>زمان اتمام فروش</span>
                   <i className={`${styles.icon} r-men`}></i>
@@ -83,14 +112,21 @@ export default function Type(props) {
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.present_primary_market.number_of_shares}`}</span>
                 <div className={styles.stateInfo}>
                   <span>سهم من از ملک</span>
                   <i className={`${styles.icon} r-money-dollar-badge`}></i>
                 </div>
               </div>
               <br />
-              <button onClick={setModalIsOpenToTrue}>ثبت پیشنهاد خرید</button>
+              <button
+                className={styles.modalButton}
+                onClick={setModalIsOpenToTrue}
+              >
+                ثبت پیشنهاد خرید
+              </button>
               <Modal isOpen={modalIsOpen} className={styles.modalBody}>
                 <button onClick={setModalIsOpenToFalse}>x</button>
                 <PrimaryMarket
@@ -99,11 +135,12 @@ export default function Type(props) {
                 />
               </Modal>
             </div>
-
-            <img
-              className={styles.img}
-              src={`https://api.subkhoone.com//${props.results.data.images.main.original}`}
-            />
+            <div>
+              <img
+                className={styles.img}
+                src={`https://api.subkhoone.com//${props.results.data.images.main.original}`}
+              />
+            </div>
           </div>
         </Layout>
       </>
@@ -116,15 +153,21 @@ export default function Type(props) {
           <div className={styles.container}>
             <div className={styles.info}>
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <span className={styles.values}>
+                  {moment(
+                    props.results.data.present_secondary_market.start_date_time
+                  ).format("jYYYY/jM/jD")}{" "}
+                </span>
                 <div className={styles.stateInfo}>
                   <span>شروع دوره سرمایه گذاری</span>
-                  <i className="r-calendar"></i>
+                  <i className={`${styles.icon} r-calendar`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.all_number_of_shares}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.all_number_of_shares}`}</span>
                 <div className={styles.stateInfo}>
                   <span>نوع ملک</span>
                   <i className="r-clock"></i>
@@ -132,79 +175,111 @@ export default function Type(props) {
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.smallest_shares}`}</span>
+                <span className={styles.values}>
+                  {moment(
+                    props.results.data.present_secondary_market.end_date_time
+                  ).format("jYYYY/jM/jD")}
+                </span>
                 <div className={styles.stateInfo}>
                   <span>تاریخ پایان سرمایه گذاری</span>
-                  <i className="r-calendar"></i>
+                  <i className={`${styles.icon} r-calendar`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.largest_shares}`}</span>
+                <span className={styles.values}>
+                  {moment(
+                    props.results.data.present_secondary_market.end_date_time
+                  ).diff(
+                    moment(
+                      props.results.data.present_secondary_market.end_date_time
+                    ),
+                    "days"
+                  )}
+                </span>
                 <div className={styles.stateInfo}>
                   <span>مدت باقی مانده</span>
-                  <i className="r-clockloop"></i>
+                  <i className={`${styles.icon} r-clockloop`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.number_of_contributors}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.number_of_contributors}`}</span>
                 <div className={styles.stateInfo}>
                   <span>تعداد کل صاب</span>
-                  <i className="r-statistical"></i>
+                  <i className={`${styles.icon} r-statistical`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.present_primary_market.low_price}`}</span>
                 <div className={styles.stateInfo}>
                   <span>تعداد سرمایه گذاران تا به الان</span>
-                  <i className="r-calendar"></i>
+                  <i className={`${styles.icon} r-men`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.present_primary_market.low_price}`}</span>
                 <div className={styles.stateInfo}>
                   <span>کمترین قیمت قابل پیشنهاد برای خرید</span>
-                  <i className="r-men"></i>
+                  <i className={`${styles.icon} r-calendar`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.low_price}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.present_primary_market.low_price}`}</span>
 
                 <div className={styles.stateInfo}>
                   <span>بیشترین قیمت قابل پیشنهاد برای خرید</span>
-                  <i className="r-men"></i>
+                  <i className={`${styles.icon} r-calendar`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.present_primary_market.number_of_shares}`}</span>
                 <div className={styles.stateInfo}>
                   <span>کمترین قیمت قابل پیشنهاد برای فروش</span>
-                  <i className="r-money-dollar-badge"></i>
+                  <i className={`${styles.icon} r-calendar`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.present_primary_market.number_of_shares}`}</span>
                 <div className={styles.stateInfo}>
                   <span>بیشترین قیمت قابل پیشنهاد برای فروش</span>
-                  <i className="r-men"></i>
+                  <i className={`${styles.icon} r-calendar`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.present_primary_market.number_of_shares}`}</span>
                 <div className={styles.stateInfo}>
                   <span>سهم من از ملک</span>
-                  <i className="r-men"></i>
+                  <i className={`${styles.icon} r-men`}></i>
                 </div>
               </div>
               <br />
-              <button onClick={setModalIsOpenToTrue}>ثبت پیشنهاد خرید</button>
+              <button
+                className={styles.modalButton}
+                onClick={setModalIsOpenToTrue}
+              >
+                ثبت پیشنهاد خرید
+              </button>
               <Modal isOpen={modalIsOpen} className={styles.modalBody}>
                 <button onClick={setModalIsOpenToFalse}>x</button>
                 <SecondaryMarket
@@ -215,6 +290,7 @@ export default function Type(props) {
               <button>ثبت پیشنهاد فروش</button>
             </div>
             <img
+              className={styles.img}
               src={`https://api.subkhoone.com//${props.results.data.images.main.original}`}
             />
           </div>
@@ -229,62 +305,96 @@ export default function Type(props) {
           <div className={styles.container}>
             <div className={styles.info}>
               <div className={styles.subInfo}>
-                <span>{`صاب ${props.results.data.all_number_of_shares}`}</span>
-                <div>
-                  <i className="r-clock"></i>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.all_number_of_shares}`}</span>
+                <div className={styles.stateInfo}>
                   <span>کل صاب</span>
+                  <i className={`${styles.icon} r-clock`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.smallest_shares}`}</span>
-                <div>
-                  <i className="r-calendar"></i>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.smallest_shares}`}</span>
+                <div className={styles.stateInfo}>
                   <span>کمترین صاب خریداری شده</span>
+                  <i className={`${styles.icon} r-calendar`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.largest_shares}`}</span>
-                <div>
-                  <i className="r-clockloop"></i>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.largest_shares}`}</span>
+                <div className={styles.stateInfo}>
                   <span>بیشترین صاب خریداری شده</span>
+                  <i className={`${styles.icon} r-clockloop`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.number_of_contributors}`}</span>
-                <div>
-                  <i className="r-statistical"></i>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.number_of_contributors}`}</span>
+                <div className={styles.stateInfo}>
                   <span>تعداد کشارکت کننده ها</span>
+                  <i className={`${styles.icon} r-statistical`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                {/* <span>{`${moment(props.results)}`}</span> */}
-                <div>
-                  <i className="r-men"></i>
+                <span className={styles.values}>
+                  {moment(
+                    props.results.data.present_exit_market.start_date_time
+                  ).format("jYYYY/jM/jD")}
+                </span>
+                <div className={styles.stateInfo}>
                   <span>تاریخ شروع فروش</span>
+                  <i className={`${styles.icon} r-men`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                {/* <span></span> */}
-                <div>
-                  <i className="r-men"></i>
+                <span className={styles.values}>{`${moment(
+                  props.results.data.present_exit_market.end_date_time
+                ).diff(
+                  moment(
+                    props.results.data.present_exit_market.start_date_time
+                  ),
+                  "days"
+                )}روز
+                  ${moment(
+                    props.results.data.present_exit_market.end_date_time
+                  ).diff(
+                    moment(
+                      props.results.data.present_exit_market.start_date_time
+                    ),
+                    "hours"
+                  )}ساعت`}</span>
+                <div className={styles.stateInfo}>
                   <span>زمان اتمام فروش</span>
+                  <i className={`${styles.icon} r-men`}></i>
                 </div>
               </div>
               <br />
               <div className={styles.subInfo}>
-                <span>{`${props.results.data.present_primary_market.number_of_shares}`}</span>
-                <div>
-                  <i className="r-money-dollar-badge"></i>
+                <span
+                  className={styles.values}
+                >{`${props.results.data.present_primary_market.number_of_shares}`}</span>
+                <div className={styles.stateInfo}>
                   <span>سهم من از ملک</span>
+                  <i className={`${styles.icon} r-money-dollar-badge`}></i>
                 </div>
               </div>
               <br />
-              <button onClick={setModalIsOpenToTrue}>ثبت پیشنهاد خرید</button>
+              <button
+                className={styles.modalButton}
+                onClick={setModalIsOpenToTrue}
+              >
+                ثبت پیشنهاد خرید
+              </button>
               <Modal isOpen={modalIsOpen} className={styles.modalBody}>
                 <button onClick={setModalIsOpenToFalse}>x</button>
                 <ExitMarket
